@@ -10,7 +10,7 @@ app.use( useragent.express() );
 router.get('/', function(req, res, next) {
   
 
-  //var ip = req.ip;
+  var ip = req.ip;
   var source = req.headers['user-agent'];
   var languageHeaders = req.headers['accept-language'];
   var languageAccepts = accepts(req).languages();
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
   var jsonData = JSON.stringify( useragent.parse(source));
   var ua = useragent.parse(source);
   var os = ua.os;
-  var ip = ua.geoIp;//won't exist until I put up on heroku
+  //var ip = ua.geoIp;//won't exist until I put up on heroku
   var browser = ua.browser;
   var browserVersion = ua.version;
   
@@ -30,6 +30,7 @@ router.get('/', function(req, res, next) {
   console.log('languageHeaders is: '+ languageHeaders);
   console.log("languageAccepts from accepts is: " + languageAccepts);
   console.log('index[0] of languageAccepts is: ' + languageAccepts[0]);
+  console.log('ua is: ' + ua);
   
 /*  res.json( {
     "ipaddress": ip,
