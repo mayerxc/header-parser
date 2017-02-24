@@ -10,7 +10,8 @@ app.use( useragent.express() );
 router.get('/', function(req, res, next) {
   
 
-  var ip = req.ip;
+  //var ip = req.ip;
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var source = req.headers['user-agent'];
   var languageHeaders = req.headers['accept-language'];
   var languageAccepts = accepts(req).languages();
