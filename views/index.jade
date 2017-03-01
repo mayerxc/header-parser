@@ -1,17 +1,16 @@
 extends layout
 
 block content
-  h1 Show your IP address
-  p #{ip}
-  h1 Show your Language
-  p #{language}
-  h1 Show your Software
-  p #{os}
-  h1 Show your browser
-  p #{browser}
-  h1 Version of the browser
-  p #{browserVersion}
-  
-  
-
-  
+  h1 Chris Mayer's Header Parser Microservice
+  p With this app you will be able to:
+    ul
+      li Go to 
+        a(href='https://fathomless-shore-77356.herokuapp.com/json' target='blank') https://fathomless-shore-77356.herokuapp.com/json
+        |  to get the IP address, language and operating system for your browser.
+  p With this microservice I used node.js, express and express-useragent middleware to get information about your browser and operating system and return that information in a JSON format.
+  p Below is some information about your system:
+    ul
+      li IP address: #{ip}
+      li Language: #{language}
+      li Operating system: #{os}
+      li Browser: #{browser} version #{browserVersion}
