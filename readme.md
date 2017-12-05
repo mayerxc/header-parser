@@ -8,6 +8,3 @@ To see it in action please go to:
 
 https://mayer-header-parser.herokuapp.com/
 
-To view the code visit:
-
-https://github.com/mayerxc/header-parser/
